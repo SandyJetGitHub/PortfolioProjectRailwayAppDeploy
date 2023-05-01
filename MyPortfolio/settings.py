@@ -10,10 +10,10 @@ environ.Env.read_env()
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DJANGO_DEBUG')
+DEBUG = env("DJANGO_DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -73,12 +73,12 @@ WSGI_APPLICATION = 'MyPortfolio.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': env('DJANGO_ENGINE'),
-        'NAME': env('DJANGO_NAME'),
-        'USER': env('DJANGO_USER'),
-        'PASSWORD': env('DJANGO_PASSWORD'),
-        'HOST': env('DJANGO_HOST'),
-        'PORT': env('DJANGO_PORT'),
+        'ENGINE': env("DJANGO_ENGINE"),
+        'NAME': env("DJANGO_NAME"),
+        'USER': env("DJANGO_USER"),
+        'PASSWORD': env("DJANGO_PASSWORD"),
+        'HOST': env("DJANGO_HOST"),
+        'PORT': env("DJANGO_PORT")
     }
 }
 

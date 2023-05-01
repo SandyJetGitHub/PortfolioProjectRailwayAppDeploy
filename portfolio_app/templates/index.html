@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block hero %}
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="hero-container" data-aos="fade-in">
+            <h1>Sandesh</h1>
+            <h1>Gharal</h1>
+            {% for role_names in all_roles %}
+                <p>I'm <span class="typed" data-typed-items="{{role_names}}"></span></p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock hero %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+  {% block resume %}
+            <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          
+        </div>
+
+        <div class="row">
+            <div data-aos="fade-up">
+              <h3 class="resume-title">Sumary</h3>
+                <div class="resume-item pb-0">
+                  <h4>Sandesh Gharal</h4>
+                  <ul>
+                    {% for summary_obj in resume_summary_info %}
+                      <li>{{summary_obj}}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+            
+            </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            {% for project_dtls in project_dtls_info %}
+              <div class="resume-item">
+                <h4>Project: {{project_dtls.project_name}}</h4>
+                <h4>Client: {{project_dtls.client_name}}</h4>
+                <h5>{{project_dtls.duration}}</h5>
+                <p><em>Organization: {{project_dtls.organization}}</em></p>
+                <p><strong>Technolgies Used: {{project_dtls.technologies_used}}</strong></p>
+                <ul>
+                  {% for k,v in project_desc_info.items %}
+                    {% if k == project_dtls.project_name %}
+                      {% for desc in v %}
+                        <li>{{desc}}</li>
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+          <div data-aos="fade-up">
+            <h3 class="resume-title">Education</h3>
+              {% for eduObj in all_edu_info %}
+                <div class="resume-item">
+                  <h4>{{eduObj.course_name}}</h4>
+                  <h5>{{eduObj.course_year}}</h5>
+                  <p><em>{{eduObj.course_university}}</em></p>
+                  <p>{{eduObj.course_info}}</p>
+                  <p>Grade:&nbsp{{eduObj.course_grade}}</p>
+                </div>
+              {% endfor %}
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+    
+  {% endblock resume %}
